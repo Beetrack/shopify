@@ -1,0 +1,21 @@
+<h1> Carrier Services </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Callback url</th>
+      <th>Service discovery</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= @errors if carrier_services.empty? %>
+    <% carrier_services.each do |carrier_service| %>
+      <tr>
+        <td><%= carrier_service.name %></td>
+        <td><%= carrier_service.callback_url %></td>
+        <td><%= carrier_service.service_discovery%></td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
