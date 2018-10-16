@@ -1,14 +1,6 @@
-<% content_for :javascript do %>
-  <script type="text/javascript">
-    ShopifyApp.ready(function(){
-      ShopifyApp.Bar.initialize({ title: "Carrier Services" });
-    });
-  </script>
-<% end %>
-
-
 <h1> Carrier Services </h1>
 
+<% unless @carrier_services.empty? %>
 <table>
   <thead>
     <tr>
@@ -18,7 +10,6 @@
     </tr>
   </thead>
   <tbody>
-    <%="<tr><td>#{@errors}</td></tr>".html_safe if @carrier_services.empty? %>
     <% @carrier_services.each do |carrier_service| %>
       <tr>
         <td><%= carrier_service.name %></td>
@@ -28,3 +19,7 @@
     <%end%>
   </tbody>
 </table>
+<%else%>
+  <%= @errors %>
+<%end%>
+
