@@ -18,7 +18,7 @@
     </tr>
   </thead>
   <tbody>
-    <%= @errors if @carrier_services.empty? %>
+    <%="<tr><td>#{@errors}</td></tr>".html_safe if @carrier_services.empty? %>
     <% @carrier_services.each do |carrier_service| %>
       <tr>
         <td><%= carrier_service.name %></td>

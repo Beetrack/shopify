@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
     response.headers['X-Frame-Options'] = 'ALLOWALL'
   end
 
+  def set_current_show
+    @shop = ShopifyAPI::Shop.current
+  end
+
 end
