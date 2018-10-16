@@ -6,7 +6,7 @@ class HomeController < ShopifyApp::AuthenticatedController
     begin
       @carrier_services = ShopifyAPI::CarrierService.find(:all)
     rescue => e
-      puts e
+      logger.error e
     end
   end
 end
