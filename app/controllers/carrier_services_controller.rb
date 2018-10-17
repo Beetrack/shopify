@@ -30,7 +30,7 @@ class CarrierServicesController < ShopifyApp::AuthenticatedController
     begin
       response = ShopifyAPI::CarrierService.delete(params_carrier_service[:id])
       logger.debug "Carrier Service Response: #{response.to_json}"
-      redirecto_to carrier_services_path
+      redirect_to carrier_services_path
     rescue => e
       logger.error = "Carrier Service Response: #{e}"
     end
