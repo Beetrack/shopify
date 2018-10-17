@@ -17,7 +17,7 @@ class CarrierServicesController < ShopifyApp::AuthenticatedController
   def create
     begin
       carrier_service = ShopifyAPI::CarrierService.create(params_carrier_service)
-      logger.debug "Carrier Service Response: #{carrier_service}"
+      logger.debug "Carrier Service Response: #{carrier_service.to_json}"
       redirect_to carrier_services_path
     rescue => e
       flash[:error] = e
