@@ -15,7 +15,13 @@ class CarrierServicesController < ShopifyApp::AuthenticatedController
   def edit; end
 
   def create
-    logger.info "Params Carrier Service: #{params_carrier_service}"
+    begin
+      ShopifyAPI::CarrierService.create(params_carrier_servicer)
+      redirect_to carrier_services_path
+    rescue => e
+      flash[:error] = e
+      render :new
+    end
   end
 
   def delete; end
@@ -23,6 +29,6 @@ class CarrierServicesController < ShopifyApp::AuthenticatedController
   private
 
   def params_carrier_service
-    params.permit(:name, :callback_url, :service_dicovery)
+    params.permit(:name, :callback_url, :service_discovery)
   end
 end
