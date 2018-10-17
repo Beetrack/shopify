@@ -1,4 +1,4 @@
-class CarrierServicesController < ApplicationController
+class CarrierServicesController < SessionsController
 
   def index
     @carrier_services = []
