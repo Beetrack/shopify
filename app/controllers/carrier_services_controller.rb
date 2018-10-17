@@ -4,7 +4,6 @@ class CarrierServicesController < ShopifyApp::AuthenticatedController
     @carrier_services = []
     begin
       @carrier_services = ShopifyAPI::CarrierService.find(:all)
-      flash[:notice] = 'Carrier Services is empty' if @carrier_services.empty?
     rescue => e
       flash[:error] = e
     end
