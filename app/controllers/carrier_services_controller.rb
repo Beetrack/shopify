@@ -1,4 +1,4 @@
-class CarrierServicesController < ShopifyApp::SessionsController
+class CarrierServicesController < ShopifyApp::AuthenticatedController
 
   def index
     @carrier_services = []
