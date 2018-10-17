@@ -1,16 +1,11 @@
 <% content_for :javascript do %>
   <script type="text/javascript">
-    window.mainPageTitle = 'Regular Page';
+    window.mainPageTitle = 'Carrier Services';
     ShopifyApp.ready(function(){
       ShopifyApp.Bar.initialize({
         title: window.mainPageTitle,
         buttons: {
           secondary: [
-            {
-              label: "Documentation",
-              href: "http://docs.shopify.com/embedded-app-sdk",
-              target: 'new'
-            },
             {
               label: "Back",
               href: "/",
@@ -23,8 +18,6 @@
   </script>
 <% end %>
 
-
-<h1> Carrier Services </h1>
 <table>
   <thead>
     <tr>
@@ -44,3 +37,4 @@
   </tbody>
 </table>
 
+<%= link_to "new carrier service", new_carrier_service_path %>

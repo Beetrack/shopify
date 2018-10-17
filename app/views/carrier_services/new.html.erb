@@ -1,0 +1,21 @@
+<%= form_tag(carrier_services_path, method: :post)%>
+
+<%= label_tag("name") %><br>
+<%= text_field_tag("name") %>
+<br>
+<br>
+
+<%= label_tag("callback url") %><br>
+<%= text_field_tag("callback_url") %>
+<br>
+<br>
+
+<%= label_tag("service discovery") %><br>
+<%= check_box_tag("service_discovery") %>
+
+<br>
+<br>
+
+<%= button_tag('create', type: 'submite') %>
+
+<%end%>
