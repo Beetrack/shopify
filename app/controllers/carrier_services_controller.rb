@@ -26,10 +26,11 @@ class CarrierServicesController < ShopifyApp::AuthenticatedController
     end
   end
 
-  def destroy 
+  def destroy
     begin
       response = ShopifyAPI::CarrierService.delete(params_carrier_service[:id])
       logger.debug "Carrier Service Response: #{response.to_json}"
+      flash[:notice] = 'Carrier service destroyed successfully'
       redirect_to carrier_services_path
     rescue => e
       logger.error = "Carrier Service Response: #{e}"
@@ -39,6 +40,6 @@ class CarrierServicesController < ShopifyApp::AuthenticatedController
   private
 
   def params_carrier_service
-    params.permit(:id, :name, :callback_url, :service_discovery)
+    params.permit(:id, :name, :callback_url, :service_discovery, :active)
   end
 end
