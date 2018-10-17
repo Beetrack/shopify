@@ -16,7 +16,8 @@ class CarrierServicesController < ShopifyApp::AuthenticatedController
 
   def create
     begin
-      ShopifyAPI::CarrierService.create(params_carrier_service)
+      carrier_service = ShopifyAPI::CarrierService.create(params_carrier_service)
+      fash[:notice] = carrier_service
       redirect_to carrier_services_path
     rescue => e
       flash[:error] = e
