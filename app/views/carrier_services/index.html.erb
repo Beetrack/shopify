@@ -21,19 +21,23 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Name</th>
       <th>Callback url</th>
       <th>Service discovery</th>
       <th>Active</th>
+      <th>Type</th>
     </tr>
   </thead>
   <tbody>
     <% @carrier_services.each do |carrier_service| %>
       <tr>
+        <td><%= carrier_service.id%></td>
         <td><%= carrier_service.name %></td>
         <td><%= carrier_service.callback_url %></td>
         <td><%= carrier_service.service_discovery%></td>
         <td><%= carrier_service.active%></td>
+        <td><%= carrier_service.carrier_service_type%></td>
       </tr>
     <%end%>
   </tbody>
