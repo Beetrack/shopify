@@ -26,7 +26,7 @@ class CarrierServicesController < ShopifyApp::AuthenticatedController
     end
   end
 
-  def delete
+  def destroy 
     begin
       response = ShopifyAPI::CarrierService.delete(params_carrier_service[:id])
       logger.debug "Carrier Service Response: #{response.to_json}"
