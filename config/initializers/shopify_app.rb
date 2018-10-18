@@ -1,7 +1,7 @@
 ShopifyApp.configure do |config|
-  config.application_name = 'My Shopify App'
-  config.api_key = '96c8a662f3fbd53637e965d748d5c412'
-  config.secret = 'd1c4f62b864cb11491823372fbbd8261'
+  config.application_name = 'Beetrack Shopify'
+  config.api_key = app_secrets('shopify_api_key')
+  config.secret = app_secrets('shopify_api_secret')
   config.scope = 'read_orders, read_products, write_shipping, read_shipping'
   config.embedded_app = true
   config.after_authenticate_job = false
