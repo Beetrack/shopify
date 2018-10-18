@@ -3,8 +3,5 @@ Rails.application.routes.draw do
   mount ShopifyApp::Engine, at: '/'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :carrier_services, except: [:show]
-
-  post 'test' => 'test#test'
 
 end
