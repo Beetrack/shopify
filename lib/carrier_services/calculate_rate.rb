@@ -1,9 +1,10 @@
 module CarrierServices
   class CalculateRate
-    attr_accessor :data_json
+    attr_accessor :rate
 
-    def initialize(rate)
+    def initialize(rate, service)
       @rate = rate
+      @service = service
     end
 
     def execute
